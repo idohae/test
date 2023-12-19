@@ -1,4 +1,6 @@
 
+import Hangman
+
 class Hangman():
     """
     The hangman game class
@@ -91,3 +93,24 @@ class Hangman():
             if self.failed_attempts >= len(HANGMAN) :
               print("\n-----You lost!")
               break
+
+
+HANGMAN = [
+    '________',
+    '|       |',
+    '|       O',
+    '|       |',
+    '|      /|\ ',
+    '|       |',
+    '|      / \ '
+]
+
+WORDS = [
+    'casa', 'car', 'mono', 'elevator', 'python', 'java',
+    'pleasure', 'young', 'festival', 'sing', 'class'
+]
+
+if __name__ == '__main__':
+    word_to_guess = random.choice(WORDS)
+    hangman = Hangman(word_to_guess)
+    hangman.play()
